@@ -19,4 +19,30 @@ npx ionic start
 # choose react - template: blank - name: my-ionic-react-app
 ```
 
+## Serve the default demo webcomponent
+```bash
+# TERMINAL 1
+cd my-stencil-components
+npm install
+npm start
+# xdgopen http://localhost:3333/
+```
+
+The webcomponent will be served in to main files:
+* http://localhost:3333/build/my-stencil-components.esm.js
+* http://localhost:3333/build/my-component.entry.js
+
+It is displayed in http://localhost:3333/index.html and loaded with:
+
+```html
+  <script type="module" src="/build/my-stencil-components.esm.js"></script>
+  <script nomodule src="/build/my-stencil-components.js"></script>
+```
+
+And instanciated with:
+
+```html
+`  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+``
+
 The End
