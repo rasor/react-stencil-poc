@@ -10,6 +10,8 @@ const Home: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
+        <my-component first="External Stencil" last="'Don't call me a framework' JS"></my-component>
+
         The world is your oyster.
         <p>
           If you get lost, the{' '}

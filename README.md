@@ -84,7 +84,37 @@ npm start
 As with the my-stencil-app:
 
 * Paste `<script>` into `src/index.html`
+* Paste `<my-component>` into `src/pages/Home.tsx`
+
+Now you can see the webcomponent on the home page if both projects are started.
+
+## Serve the default demo ionic-react-app with the webcomponent
+
+```bash
+# TERMINAL 5
+cd my-ionic-react-app
+npm install
+npm start
+# xdgopen http://localhost:3000/
+```
+
+As with the my-stencil-app:
+
+* Paste `<script>` into `public/index.html`
 * Paste `<my-component>` into `src/components/app-home/app-home.tsx`
+
+Create a new file `src/declaration.d.ts` with the content
+
+```typescript
+export declare global {
+    // From /my-stencil-app/node_modules/@stencil/core/dist/index.d.ts
+    namespace JSX {
+        interface IntrinsicElements extends d.JSX.IntrinsicElements, d.JSXBase.IntrinsicElements {
+            [tagName: string]: any;
+        }
+    }
+}
+```
 
 Now you can see the webcomponent on the home page if both projects are started.
 
