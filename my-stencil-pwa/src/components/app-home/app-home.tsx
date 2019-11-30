@@ -15,6 +15,7 @@ export class AppHome {
       </ion-header>,
 
       <ion-content class="ion-padding">
+        <my-component first="External Stencil" last="'Don't call me a framework' JS"></my-component>
         <p>
           Welcome to the PWA Toolkit. You can use this starter to build entire
           apps with web components using Stencil and ionic/core! Check out the

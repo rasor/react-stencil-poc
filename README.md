@@ -56,7 +56,7 @@ npm start
 # xdgopen http://localhost:3334/
 ```
 
-The app is displayed in http://localhost:3334/index.html. In `my-stencil-app/src/index.html` you can copy the webcomponent loading lines from my-stencil-components:
+The app is displayed in http://localhost:3334/index.html. In `my-stencil-app/src/index.html` you can paste the webcomponent loading lines from my-stencil-components above app.esm.js:
 
 ```html
   <script type="module" src="http://localhost:3333/build/my-stencil-components.esm.js"></script>
@@ -68,6 +68,23 @@ And instanciate one in `my-stencil-app/src/components/app-home/app-home.tsx` wit
 ```html
   <my-component first="External Stencil" last="'Don't call me a framework' JS"></my-component>
 ```
+
+Now you can see the webcomponent on the home page if both projects are started.
+
+## Serve the default demo stencil-pwa with the webcomponent
+
+```bash
+# TERMINAL 4
+cd my-stencil-pwa
+npm install
+npm start
+# xdgopen http://localhost:3335/
+```
+
+As with the my-stencil-app:
+
+* Paste `<script>` into `src/index.html`
+* Paste `<my-component>` into `src/components/app-home/app-home.tsx`
 
 Now you can see the webcomponent on the home page if both projects are started.
 
