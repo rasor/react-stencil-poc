@@ -19,7 +19,7 @@ npx ionic start
 # choose react - template: blank - name: my-ionic-react-app
 ```
 
-## Serve the default demo webcomponent
+### Serve the default demo webcomponent
 
 ```bash
 # TERMINAL 2
@@ -46,7 +46,7 @@ And instanciated with:
   <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
 ```
 
-## Serve the default demo stencil-app with the webcomponent
+### Serve the default demo stencil-app with the webcomponent
 
 ```bash
 # TERMINAL 3
@@ -71,7 +71,7 @@ And instanciate one in `my-stencil-app/src/components/app-home/app-home.tsx` wit
 
 Now you can see the webcomponent on the home page if both projects are started.
 
-## Serve the default demo stencil-pwa with the webcomponent
+### Serve the default demo stencil-pwa with the webcomponent
 
 ```bash
 # TERMINAL 4
@@ -88,7 +88,7 @@ As with the my-stencil-app:
 
 Now you can see the webcomponent on the home page if both projects are started.
 
-## Serve the default demo ionic-react-app with the webcomponent
+### Serve the default demo ionic-react-app with the webcomponent
 
 ```bash
 # TERMINAL 5
@@ -117,5 +117,51 @@ export declare global {
 ```
 
 Now you can see the webcomponent on the home page if both projects are started.
+
+## npm publish demo webcomponents to github registry
+
+Add a personal access token
+
+* Goto https://github.com/settings/tokens
+    * Generate new token
+    * [Scopes](https://help.github.com/en/github/managing-packages-with-github-packages/about-github-packages#about-tokens):
+        * read:packages
+        * write:packages
+        * delete:packages
+        * repo
+    * Name: npm publish to github 
+    * Copy the token hex string to editor
+
+Add to `my-stencil-components/package.json`
+
+```json
+ // increase version
+ "version": "0.0.2",
+ // add 
+ "publishConfig": {
+    "registry":"https://npm.pkg.github.com/@rasor"
+  },
+  "repository" : {
+    "type" : "git",
+    "url": "ssh://git@github.com:rasor/react-stencil-poc.git",
+    "directory": "react-stencil-poc"
+  },
+```
+
+Login to npm registry.  
+You can do that with a [~/.npmrc](https://help.github.com/en/github/managing-packages-with-github-packages/configuring-npm-for-use-with-github-packages#authenticating-with-a-personal-access-token) file or  
+in CLI as here:
+
+```bash
+# TERMINAL 2
+npm login --registry=https://npm.pkg.github.com/
+# Username: (rasor in my case)
+# Password: (Paste personal access token)
+# Email: (your email)
+
+cd my-stencil-components
+npm publish
+# + my-stencil-components@0.0.2
+```
 
 The End
