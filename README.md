@@ -132,7 +132,8 @@ Add a personal access token
     * Name: npm publish to github 
     * Copy the token hex string to editor
 
-Add to `my-stencil-components/package.json`
+Add to `my-stencil-components/package.json`.  
+If you have several projects (as in this case) you also need to add section [repository](https://help.github.com/en/github/managing-packages-with-github-packages/configuring-npm-for-use-with-github-packages#publishing-multiple-packages-to-the-same-repository) - otherwise it will use the name on the project to try to locate the package folder (which it fetches from the repo name...)
 
 ```json
  // increase version
@@ -163,5 +164,7 @@ cd my-stencil-components
 npm publish
 # + my-stencil-components@0.0.2
 ```
+
+You should now see the package uploaded to https://github.com/rasor/react-stencil-poc/packages/
 
 The End
