@@ -20,8 +20,9 @@ npx ionic start
 ```
 
 ## Serve the default demo webcomponent
+
 ```bash
-# TERMINAL 1
+# TERMINAL 2
 cd my-stencil-components
 npm install
 npm start
@@ -42,7 +43,32 @@ It is displayed in http://localhost:3333/index.html and loaded with:
 And instanciated with:
 
 ```html
-`  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
-``
+  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+```
+
+## Serve the default demo stencil-app with the webcomponent
+
+```bash
+# TERMINAL 3
+cd my-stencil-app
+npm install
+npm start
+# xdgopen http://localhost:3334/
+```
+
+The app is displayed in http://localhost:3334/index.html. In `my-stencil-app/src/index.html` you can copy the webcomponent loading lines from my-stencil-components:
+
+```html
+  <script type="module" src="http://localhost:3333/build/my-stencil-components.esm.js"></script>
+  <script nomodule src="http://localhost:3333/build/my-stencil-components.js"></script>
+```
+
+And instanciate one in `my-stencil-app/src/components/app-home/app-home.tsx` with:
+
+```html
+  <my-component first="External Stencil" last="'Don't call me a framework' JS"></my-component>
+```
+
+Now you can see the webcomponent on the home page if both projects are started.
 
 The End

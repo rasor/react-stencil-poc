@@ -10,6 +10,8 @@ export class AppHome {
   render() {
     return (
       <div class='app-home'>
+        <my-component first="External Stencil" last="'Don't call me a framework' JS"></my-component>
+
         <p>
           Welcome to the Stencil App Starter.
           You can use this starter to build entire apps all with
