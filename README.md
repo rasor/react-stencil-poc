@@ -167,4 +167,43 @@ npm publish
 
 You should now see the package uploaded to https://github.com/rasor/react-stencil-poc/packages/
 
+## Extend webcomponents with element having typed attributes
+
+The demo webcomponent `<my-component>` has attributes, that are assigned strings.
+
+It would be nice to feed it a typed object.  
+From [Tab3.tsx code in 'Announcing Ionic React'](https://ionicframework.com/blog/announcing-ionic-react/) put the `export interface Person` into `my-stencil-components/src/models/person.ts` 
+
+In `my-stencil-components/src/components/my-component/my-component.tsx` add the Person, too
+
+```typescript
+import { Person } from '../../models/person';
+
+export class MyComponent {
+  /**
+   * A typed object
+   */
+  @Prop() person: Person;
+
+  render() {
+    return <div>
+      <div>Hello, World! I'm {this.getText()}</div>
+      {this.person &&
+        <div >
+          <div slot="start">
+            <img src={this.person.photo} />
+          </div>
+          <div>
+            <h2>{this.person.name}</h2>
+            <p>{this.person.position}</p>
+          </div>
+        </div>
+      }
+    </div>;
+  }
+}
+```
+
+then increase version in `package.json` and re-publish
+
 The End

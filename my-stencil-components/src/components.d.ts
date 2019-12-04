@@ -7,7 +7,9 @@
 
 
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
-
+import {
+  Person,
+} from './models/person';
 
 export namespace Components {
   interface MyComponent {
@@ -23,6 +25,10 @@ export namespace Components {
     * The middle name
     */
     'middle': string;
+    /**
+    * A typed object
+    */
+    'person': Person;
   }
 }
 
@@ -53,6 +59,10 @@ declare namespace LocalJSX {
     * The middle name
     */
     'middle'?: string;
+    /**
+    * A typed object
+    */
+    'person'?: Person;
   }
 
   interface IntrinsicElements {
