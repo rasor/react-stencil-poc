@@ -160,7 +160,7 @@ npm login --registry=https://npm.pkg.github.com/
 # Password: (Paste personal access token)
 # Email: (your email)
 
-cd my-stencil-components
+cd ../my-stencil-components
 npm publish
 # + my-stencil-components@0.0.2
 ```
@@ -205,5 +205,58 @@ export class MyComponent {
 ```
 
 then increase version in `package.json` and re-publish
+
+WARNING - it must be PROD build in order to include the dist/loader folder 
+[Integration with StencilJS problem - Cannot find module test-components/dist/loader](https://github.com/ionic-team/stencil/issues/1351#issuecomment-499363030)
+
+```bash
+# Re-publish
+cd ..\my-stencil-components
+# must build for PROD to 
+npm run build
+npm login --registry=https://npm.pkg.github.com/
+npm publish
+```
+
+### Use the new package
+
+Create file `/my-stencil-app/.npmrc` containing
+
+```ini
+registry=https://npm.pkg.github.com/@rasor
+```
+
+If you need more orgs see [here](https://help.github.com/en/github/managing-packages-with-github-packages/configuring-npm-for-use-with-github-packages#installing-packages-from-other-organizations).  
+If you use MyGet packages see [here](https://docs.myget.org/docs/reference/myget-npm-support).  
+
+Install the component:
+
+```bash
+cd ../my-stencil-app
+npm install --save my-stencil-components@0.0.3
+```
+
+In `/my-stencil-app/src/index.html` remove the `<script>` loading of the my-stencil-components.  
+... also meaning you don't need the webserver hosting my-stencil-components on port 3333 running - you can Ctrl+c it.
+
+So now you need to import it from the downloaded package instead in `my-stencil-app/src/index.ts`:
+
+```typescript
+// https://stenciljs.com/docs/react
+// Load your web components
+import { applyPolyfills, defineCustomElements } from 'my-stencil-components/loader'
+
+applyPolyfills().then(() => {
+     defineCustomElements(window);
+   });
+```
+
+# Links
+
+* [Stencil](https://stenciljs.com/resources)
+  * [Morioh - How to Build Reusable Web Components Using Stencil.js](https://morioh.com/p/f2eefe79f2c9) - generate
+  * [Case study: isitblackfridayyet.app: #1 Creating a Progressive Web App with StencilJS and Workbox](https://julienrenaux.fr/2019/11/25/creating-progressive-web-app-pwa-serviceworker-stenciljs-workbox/) - Caching
+* [Creating a design system with stencil and react](https://dev.to/fvaldes33/creating-a-design-system-with-stencil-and-react-2nmj)
+* [How to create a reusable Web Component with Stencil and use it in your Ionic 4 application with Angular](https://geeklearning.io/how-to-create-a-reusable-web-component-with-stenciljs-and-use-it-in-your-ionic-4-application/)
 
 The End
