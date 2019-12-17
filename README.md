@@ -233,7 +233,7 @@ Install the component:
 
 ```bash
 cd ../my-stencil-app
-npm install --save my-stencil-components@0.0.3
+npm install --save my-stencil-components@0.0.4
 ```
 
 In `/my-stencil-app/src/index.html` remove the `<script>` loading of the my-stencil-components.  

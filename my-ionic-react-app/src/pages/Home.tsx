@@ -1,5 +1,10 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import React from 'react';
+// Load my-component
+import  'my-stencil-components'
+//import  * as xx from 'my-stencil-components/dist/types/components'
+//import  { MyComponent } from 'my-stencil-components/dist/types/components'
+//import  { LocalJSX } from 'my-stencil-components/dist/types/components'
 
 const Home: React.FC = () => {
   return (
