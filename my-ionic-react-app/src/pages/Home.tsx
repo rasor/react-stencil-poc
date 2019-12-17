@@ -1,12 +1,16 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import React from 'react';
 // Load my-component
-import  'my-stencil-components'
-//import  * as xx from 'my-stencil-components/dist/types/components'
-//import  { MyComponent } from 'my-stencil-components/dist/types/components'
-//import  { LocalJSX } from 'my-stencil-components/dist/types/components'
+import 'my-stencil-components'
+import { Person } from 'my-stencil-components/dist/types/models/person';
 
 const Home: React.FC = () => {
+  const pers: Person = {
+    email: 'donald.duck@andeby.disney',
+    name: 'Donald Duck',
+    position: '0',
+    photo: ''
+  };
   return (
     <IonPage>
       <IonHeader>
@@ -15,7 +19,7 @@ const Home: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
-        <my-component first="External Stencil" last="'Don't call me a framework' JS"></my-component>
+        <my-component first="External Stencil" last="'Don't call me a framework' JS" person={pers}></my-component>
 
         The world is your oyster.
         <p>
