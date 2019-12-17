@@ -25,10 +25,10 @@
     "@stencil/core": "^1.3.3"
   },
   "publishConfig": {
-    "registry":"https://npm.pkg.github.com/@rasor"
+    "registry": "https://npm.pkg.github.com/@rasor"
   },
-  "repository" : {
-    "type" : "git",
+  "repository": {
+    "type": "git",
     "url": "ssh://git@github.com:rasor/react-stencil-poc.git",
     "directory": "react-stencil-poc"
   },

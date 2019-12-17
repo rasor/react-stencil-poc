@@ -1,4 +1,5 @@
 import { Component, h } from '@stencil/core';
+import  'my-stencil-components'
 
 @Component({
   tag: 'app-home',
