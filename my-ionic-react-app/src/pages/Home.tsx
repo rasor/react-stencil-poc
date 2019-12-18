@@ -9,6 +9,7 @@ const Home: React.FC = () => {
     position: '0',
     photo: ''
   };
+  const commonProps = {person: pers};
   console.log(pers.name);
   return (
     <IonPage>
@@ -18,7 +19,10 @@ const Home: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
-        <my-component first="External Stencil" last="'Don't call me a framework' JS" person={pers}></my-component>
+      {/* Soon a sln? https://github.com/skatejs/skatejs/issues/1058#issuecomment-275851441 */}
+      {/* https://stackoverflow.com/a/49081745/750989 */}
+      {pers && <my-component first="External Stencil" last="'Don't call me a framework' JS" {...commonProps}></my-component>}
+      {/* {pers && <my-component first="External Stencil" last="'Don't call me a framework' JS" person={pers}></my-component>} */}
 
         The world is your oyster.
         <p>
