@@ -1,7 +1,5 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import React from 'react';
-// Load my-component
-import 'my-stencil-components'
 import { Person } from 'my-stencil-components/dist/types/models/person';
 
 const Home: React.FC = () => {
@@ -11,6 +9,7 @@ const Home: React.FC = () => {
     position: '0',
     photo: ''
   };
+  console.log(pers.name);
   return (
     <IonPage>
       <IonHeader>

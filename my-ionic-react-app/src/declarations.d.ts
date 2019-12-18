@@ -1,3 +1,7 @@
+// Load my-component for untyped elements
+import 'my-stencil-components'
+
+// Load my-component for typed elements
 import { JSX as ExtJSX } from 'my-stencil-components'
 
 export declare global {
