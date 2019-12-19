@@ -30,6 +30,8 @@ export namespace Components {
     */
     'person': Person;
   }
+  interface MyTabs {}
+  interface TabP1 {}
 }
 
 declare global {
@@ -40,8 +42,22 @@ declare global {
     prototype: HTMLMyComponentElement;
     new (): HTMLMyComponentElement;
   };
+
+  interface HTMLMyTabsElement extends Components.MyTabs, HTMLStencilElement {}
+  var HTMLMyTabsElement: {
+    prototype: HTMLMyTabsElement;
+    new (): HTMLMyTabsElement;
+  };
+
+  interface HTMLTabP1Element extends Components.TabP1, HTMLStencilElement {}
+  var HTMLTabP1Element: {
+    prototype: HTMLTabP1Element;
+    new (): HTMLTabP1Element;
+  };
   interface HTMLElementTagNameMap {
     'my-component': HTMLMyComponentElement;
+    'my-tabs': HTMLMyTabsElement;
+    'tab-p1': HTMLTabP1Element;
   }
 }
 
@@ -64,9 +80,13 @@ declare namespace LocalJSX {
     */
     'person'?: Person;
   }
+  interface MyTabs {}
+  interface TabP1 {}
 
   interface IntrinsicElements {
     'my-component': MyComponent;
+    'my-tabs': MyTabs;
+    'tab-p1': TabP1;
   }
 }
 
@@ -77,6 +97,8 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       'my-component': LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+      'my-tabs': LocalJSX.MyTabs & JSXBase.HTMLAttributes<HTMLMyTabsElement>;
+      'tab-p1': LocalJSX.TabP1 & JSXBase.HTMLAttributes<HTMLTabP1Element>;
     }
   }
 }
