@@ -11,7 +11,7 @@ export class MyTabs {
   render() {
     return (
       <div>
-        <h5>--- MyTabs ---></h5>
+        <h5>--- my-stencil-components - MyTabs ---></h5>
         <header>
           <h1>Tabs Header</h1>
         </header>
@@ -20,6 +20,7 @@ export class MyTabs {
           <stencil-router>
             <stencil-route-switch scrollTopOffset={0}>
               <stencil-route url='/' component='tab-p1' exact={true} />
+              <stencil-route url='/p2' component='tab-p2' exact={true} />
               {/* <stencil-route url='/profile/:name' component='app-profile' /> */}
             </stencil-route-switch>
           </stencil-router>

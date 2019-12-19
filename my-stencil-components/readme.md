@@ -2,7 +2,10 @@
 
 Contains consumable / publishable webcomponent.  
 
-Added app-root.tsx (renamed to my-tabs.tsx) as root in index.html, so the root webcomponent contains a `<stencil-router>`.  
+Reverse History:
+
+* Added tab-p2 and moved tabs to folder /pages/
+* Added app-root.tsx (renamed to my-tabs.tsx) as root in index.html, so the root webcomponent contains a `<stencil-router>`.  
 This enables the webcomponent client to have the router in a webcomponent.  
 
 # README Org

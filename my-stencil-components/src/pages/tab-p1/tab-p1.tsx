@@ -19,7 +19,7 @@ export class TabP1 {
     console.log('rendering P1');
     return (
       <div class='tab-p1'>
-        <h5>--- TabP1 ---></h5>
+        <h5>--- my-stencil-components - TabP1 ---></h5>
         <my-component first="Import Stencil" last="'Don't call me a framework' JS" person={pers}></my-component>
 
         <p>
@@ -28,6 +28,12 @@ export class TabP1 {
           web components using Stencil!
           Check out our docs on <a href='https://stenciljs.com'>stenciljs.com</a> to get started.
         </p>
+
+        <stencil-route-link url='/p2'>
+          <button>
+            P2 page
+          </button>
+        </stencil-route-link>
 
         {/* <stencil-route-link url='/profile/stencil'>
           <button>
