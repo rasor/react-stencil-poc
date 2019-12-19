@@ -1,4 +1,4 @@
-# tab-p1
+# tab-p2
 
 
 
@@ -9,15 +9,13 @@
 
 ### Depends on
 
-- [my-component](../../components/my-component)
 - stencil-route-link
 
 ### Graph
 ```mermaid
 graph TD;
-  tab-p1 --> my-component
-  tab-p1 --> stencil-route-link
-  style tab-p1 fill:#f9f,stroke:#333,stroke-width:4px
+  tab-p2 --> stencil-route-link
+  style tab-p2 fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------
