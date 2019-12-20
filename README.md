@@ -17,6 +17,9 @@ npm init stencil
 
 npx ionic start
 # choose react - template: blank - name: my-ionic-react-app
+
+npx ionic start
+# choose react - template: tabs - name: my-ionic-react-tabs
 ```
 
 ### Serve the default demo webcomponent
