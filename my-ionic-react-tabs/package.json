@@ -12,6 +12,7 @@
     "@types/react-router": "^5.1.1",
     "@types/react-router-dom": "^5.1.0",
     "ionicons": "^4.6.3",
+    "my-stencil-components": "0.0.5",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-router": "^5.1.0",
