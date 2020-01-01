@@ -29,6 +29,10 @@ export namespace Components {
     * A typed object
     */
     'person': Person;
+    /**
+    * Enable REACT to get typesafe access this component while also get any access to the DOM element
+    */
+    'ref': any;
   }
   interface MyTabs {}
   interface TabP1 {}
@@ -87,6 +91,10 @@ declare namespace LocalJSX {
     * A typed object
     */
     'person'?: Person;
+    /**
+    * Enable REACT to get typesafe access this component while also get any access to the DOM element
+    */
+    'ref'?: any;
   }
   interface MyTabs {}
   interface TabP1 {}

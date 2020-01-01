@@ -1,6 +1,6 @@
 {
   "name": "my-stencil-components",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "react-stencil-poc",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

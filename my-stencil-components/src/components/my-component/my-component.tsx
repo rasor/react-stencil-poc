@@ -9,6 +9,10 @@ import { Person } from '../../models/person';
 })
 
 export class MyComponent {
+  /** 
+   * Enable REACT to get typesafe access this component while also get any access to the DOM element
+   */
+  @Prop() ref: any;
   /**
    * The first name
    */

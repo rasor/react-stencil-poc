@@ -2,7 +2,7 @@
 import 'my-stencil-components'
 
 // Load my-component for typed elements
-//import { JSX as ExtJSX } from 'my-stencil-components'
+import { JSX as ExtJSX } from 'my-stencil-components'
 
 export declare global {
     namespace JSX {
@@ -12,6 +12,6 @@ export declare global {
             [tagName: string]: any;
         }
         // Typed elements from imported webcomponent
-        //interface IntrinsicElements extends ExtJSX.IntrinsicElements{}
+        interface IntrinsicElements extends ExtJSX.IntrinsicElements{}
     }
 }
