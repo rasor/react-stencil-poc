@@ -2,6 +2,7 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/rea
 import React, { useRef, useEffect } from 'react';
 import { Person } from 'my-stencil-components/dist/types/models/person';
 import MyComponentClass from '../components/MyComponentClass';
+import MyComponentFunc from '../components/MyComponentFunc';
 
 const Home: React.FC = () => {
   const pers: Person = {
@@ -38,8 +39,11 @@ const Home: React.FC = () => {
         )}
 
         <p>==============</p>
-        <p>{'Using <my-component> webcomponent through <MyComponent> React  class wrapper:'}</p>
-        <MyComponentClass first="Wrapper" person={pers}></MyComponentClass>
+        <p>{'Using <my-component> webcomponent through <MyComponent> React class wrapper:'}</p>
+        <MyComponentClass first="Class Wrapper" person={pers}></MyComponentClass>
+        <p>==============</p>
+        <p>{'Using <my-component> webcomponent through <MyComponent> React function wrapper:'}</p>
+        <MyComponentFunc first="Func Wrapper" person={pers}></MyComponentFunc>
         <p>==============</p>
       </IonContent>
     </IonPage>
