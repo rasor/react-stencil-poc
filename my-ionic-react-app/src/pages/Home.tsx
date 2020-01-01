@@ -28,6 +28,8 @@ const Home: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
+        <p>==============</p>
+        <p>{'Using <my-component> webcomponent directly:'}</p>
         {/* Soon a sln? https://github.com/skatejs/skatejs/issues/1058#issuecomment-275851441 */}
         {pers && (
           // You must use DOM ref, when setting object properties in React
@@ -37,7 +39,7 @@ const Home: React.FC = () => {
         )}
 
         <p>==============</p>
-
+        <p>{'Using <my-component> webcomponent through <MyComponent> React wrapper:'}</p>
         <MyComponent first="Wrapper" person={pers}></MyComponent>
         <p>==============</p>
       </IonContent>
