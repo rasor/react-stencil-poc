@@ -1,8 +1,9 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, Suspense } from 'react';
 import { Person } from 'my-stencil-components/dist/types/models/person';
 import MyComponentClass from '../components/MyComponentClass';
-import MyComponentFunc from '../components/MyComponentFunc';
+//import MyComponentFunc from '../components/MyComponentFunc';
+const MyComponentFunc = React.lazy(() => import('../components/MyComponentFunc'));
 
 const Home: React.FC = () => {
   const pers: Person = {
@@ -13,7 +14,7 @@ const Home: React.FC = () => {
   };
   console.log(pers.name);
 
-  const wcEl:any = useRef(null);
+  const wcEl: any = useRef(null);
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
     // Apply objs directly to El after el created
@@ -30,7 +31,6 @@ const Home: React.FC = () => {
       <IonContent className="ion-padding">
         <p>==============</p>
         <p>{'Using <my-component> webcomponent directly:'}</p>
-        {/* Soon a sln? https://github.com/skatejs/skatejs/issues/1058#issuecomment-275851441 */}
         {pers && (
           // You must use DOM ref, when setting object properties in React
           <my-component ref={wcEl} first="External Stencil" last="'Don't call me a framework' JS"></my-component>
@@ -42,8 +42,11 @@ const Home: React.FC = () => {
         <p>{'Using <my-component> webcomponent through <MyComponent> React class wrapper:'}</p>
         <MyComponentClass first="Class Wrapper" person={pers}></MyComponentClass>
         <p>==============</p>
-        <p>{'Using <my-component> webcomponent through <MyComponent> React function wrapper:'}</p>
-        <MyComponentFunc first="Func Wrapper" person={pers}></MyComponentFunc>
+        {/* https://blog.bitsrc.io/lazy-loading-react-components-with-react-lazy-and-suspense-f05c4cfde10c */}
+        <p>{'Lazy loading <my-component> webcomponent through <MyComponent> React function wrapper:'}</p>
+        <Suspense fallback={<div>Loading...</div>}>
+          <MyComponentFunc first="Func Wrapper" person={pers}></MyComponentFunc>
+        </Suspense>
         <p>==============</p>
       </IonContent>
     </IonPage>
