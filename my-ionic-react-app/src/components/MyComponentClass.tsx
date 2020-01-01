@@ -1,13 +1,9 @@
 import React from 'react';
-import { Person } from 'my-stencil-components/dist/types/models/person';
+//import { Person } from 'my-stencil-components/dist/types/models/person';
+import { JSX as WcJSX } from 'my-stencil-components/dist/types';
 
-// https://charles-bryant.gitbook.io/hello-react-and-typescript/typescriptandreact
-interface IMyComponentProps {
-    first: string;
-    person: Person;
-}
 // https://reactjs.org/docs/refs-and-the-dom.html#callback-refs
-class MyComponent extends React.Component<IMyComponentProps> {
+class MyComponentClass extends React.Component<WcJSX.MyComponent> {
     wcRef: any = null;
 
     constructor(props: any) {
@@ -16,11 +12,12 @@ class MyComponent extends React.Component<IMyComponentProps> {
     }
 
     componentDidMount() {
-        this.wcRef.current.first = this.props.first;
-        this.wcRef.current.person = this.props.person;
+        this._updateRef();
     }
-
     componentDidUpdate() {
+        this._updateRef();
+    }
+    private _updateRef() {
         this.wcRef.current.first = this.props.first;
         this.wcRef.current.person = this.props.person;
     }
@@ -33,4 +30,4 @@ class MyComponent extends React.Component<IMyComponentProps> {
     }
 }
 
-export default MyComponent;
+export default MyComponentClass;
