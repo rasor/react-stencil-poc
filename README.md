@@ -15,11 +15,30 @@ npm init stencil
 npm init stencil
 # Choose ionic-pwa - name: my-stencil-pwa
 
+# npm install -g ionic
 npx ionic start
 # choose react - template: blank - name: my-ionic-react-app
 
 npx ionic start
 # choose react - template: tabs - name: my-ionic-react-tabs
+
+npm install -g create-react-library
+create-react-library --help
+# Usage: create-react-library [options] [package-name]
+# Options:
+#   -V, --version                        output the version number
+#   -d, --desc <string>                  package description
+#   -a, --author <string>                author's github handle (default: "rasor")
+#   -l, --license <string>               package license (default: "MIT")
+#   -r, --repo <string>                  package repo path
+#   -g, --no-git                         generate without git init
+#   -m, --manager <npm|yarn>             package manager to use (default: "npm")
+#   -t, --template <default|typescript>  package template to use (default: "default")
+#   -p, --template-path <string>         custom package template path
+#   -s, --skip-prompts                   skip all prompts (must provide package-name via cli)
+#   -h, --help                           output usage information
+create-react-library --template typescript my-react-components
+# 
 ```
 
 ### Serve the default demo webcomponent
