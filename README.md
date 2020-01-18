@@ -2,8 +2,15 @@
 
 Using guides:
 
-* [Stencil](https://stenciljs.com/docs/getting-started)
-* [Announcing Ionic React](https://ionicframework.com/blog/announcing-ionic-react/)
+* Stencil WebCompoents:
+  * [Stencil](https://stenciljs.com/docs/getting-started)
+* React using Ionic Components:
+  * [Announcing Ionic React](https://ionicframework.com/blog/announcing-ionic-react/)
+* React Components:
+  * [Create and Publish a React Component Library](https://itnext.io/create-and-publish-a-react-component-library-the-easy-way-6d1798974bc6)
+  * [React + npm - How to Publish a React Component to npm | Jason Watmore's Blog](https://jasonwatmore.com/post/2018/04/14/react-npm-how-to-publish-a-react-component-to-npm)
+  * [create-react-library](https://www.npmjs.com/package/create-react-library)
+    * [transitive-bullshit/react-modern-library-boilerplate](https://github.com/transitive-bullshit/react-modern-library-boilerplate/blob/feature/multiple-exports/src/index.js)
 
 ```bash
 npm init stencil
