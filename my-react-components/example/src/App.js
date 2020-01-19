@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { ExampleComponent, Foo} from 'my-react-components'
+import { ExampleComponent, Foo, Bar} from 'my-react-components'
 
 export default class App extends Component {
   render () {
@@ -11,6 +11,9 @@ export default class App extends Component {
         </div>
         <div>
           <Foo text='Modern React component module' />
+        </div>
+        <div>
+          <Bar text='Modern React component module' />
         </div>
       </div>
   )
